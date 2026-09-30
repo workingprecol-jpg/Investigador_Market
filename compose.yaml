@@ -1,0 +1,30 @@
+services:
+  trader:
+    build: .
+    restart: unless-stopped
+    command: ["python", "-m", "bot", "run", "--mode", "${BOT_MODE:-paper}"]
+    env_file:
+      - .env
+    volumes:
+      - bot-data:/app/data
+      - bot-reports:/app/reports
+      - ./config.toml:/app/config.toml:ro
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    healthcheck:
+      test: ["CMD-SHELL", "python -m bot health --mode ${BOT_MODE:-paper}"]
+      interval: 60s
+      timeout: 15s
+      start_period: 120s
+      retries: 3
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+volumes:
+  bot-data:
+  bot-reports:

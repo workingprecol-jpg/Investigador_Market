@@ -1,0 +1,32 @@
+# Capital reservado al bot; no usa todo el saldo gratuito de Binance Demo.
+mode = "paper"
+symbols = ["DOGEUSDT", "SOLUSDT", "ETHUSDT", "1000PEPEUSDT"]
+interval = "5m"
+poll_seconds = 30
+initial_equity = 100.0
+leverage = 5
+risk_per_trade = 0.005
+max_daily_loss_pct = 0.05
+max_total_loss_usdt = 30.0
+max_drawdown_pct = 0.10
+max_margin_fraction = 0.10
+max_positions = 2
+entry_threshold = 0.45
+stop_atr_multiple = 2.0
+reward_risk_ratio = 2.0
+fee_rate = 0.0005
+slippage_bps = 5.0
+max_spread_bps = 12.0
+min_quote_volume = 10000000.0
+max_funding_rate = 0.001
+news_enabled = true
+require_fresh_news = false
+grok_enabled = false
+news_refresh_seconds = 900
+adaptation_min_trades = 30
+max_holding_hours = 12.0
+min_trend_score = 0.0
+min_momentum_score = 0.0
+daily_review_enabled = true
+# Hora fija de Colombia (UTC-5). Evalua el dia anterior completo.
+daily_review_time = "00:10"

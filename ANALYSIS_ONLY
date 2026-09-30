@@ -1,0 +1,3 @@
+User policy: information and analysis only. No paper, demo or real orders.
+Policy record: the legacy trading CLI is disabled in code for all configurations.
+Removing this file does not authorize or enable order execution.
